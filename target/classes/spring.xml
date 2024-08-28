@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-  <bean class="com.springcore.master.master.spring.Doctor" id="doc1"></bean>
-  <bean class="com.springcore.master.master.spring.Nurse" id="nur1"></bean>
-  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.springcore.master.master.spring.Doctor" id="doc1">
+		<property name="qual" value="MBBS" />
+		<property name="nurse" ref="nur1"></property>
+	</bean>
+	<bean class="com.springcore.master.master.spring.Nurse" id="nur1">
+		<property name="nurName" value="AdvikA"></property>
+	</bean>
+
 </beans>
