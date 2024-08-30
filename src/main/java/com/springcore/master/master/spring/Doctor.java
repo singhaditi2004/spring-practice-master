@@ -1,6 +1,10 @@
 package com.springcore.master.master.spring;
 
-public class Doctor implements Staff {
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.BeanNameAware;
+
+public class Doctor implements Staff,BeanNameAware {
 
 	private String qual;
 	private Nurse nurse;
@@ -28,5 +32,17 @@ public class Doctor implements Staff {
 	@Override
 	public String toString() {
 		return "Doctor [qual=" + qual + ", nurse=" + nurse + "]";
+	}
+
+	@Override
+	public void setBeanName(String name) {
+		// TODO Auto-generated method stub
+		System.out.println("Set bean name is called");
+		
+	}
+	
+	@PostConstruct
+	public void postConst() {
+		System.out.println("Post constructor is called");
 	}
 }
